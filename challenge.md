@@ -5,6 +5,9 @@ This challenge evaluates an AI agent's ability to perform expert-level quantitat
 
 Participants are tasked with building or fine-tuning a model that can ingest complex financial case studies and quantitative problems, generate the appropriate reasoning steps (Chain-of-Thought), and output the correct final answer. A labeled training dataset of 1,006 examples is provided, featuring both the step-by-step reasoning (enclosed in `<think>` tags) and the final expert answers. The hidden test set contains 100 new, unseen problems across diverse financial domains.
 
+## Related Work & Differentiation
+While existing financial datasets like Sanscritic/finance-pro-bench rely on subjective, LLM-as-a-judge point rubrics over fictional multi-page narratives, this challenge introduces a strictly deterministic Exact Match (EM) evaluation protocol. By pairing deep, multi-step `<think>` reasoning traces with automated string-normalization, this benchmark eliminates evaluator drift and partial-credit loopholes, testing true quantitative derivation accuracy.
+
 ## Evaluation
 Submissions are scored using **Exact Match (EM)** accuracy. Due to the diverse nature of the answers (some are precise monetary values, others are specific conceptual explanations), the grading script strips punctuation, normalizes whitespace, and checks if the predicted string matches the ground-truth string. The platform grader strictly checks for exact text matching; participants must ensure number formats (e.g. `10.5` vs `10.50`) perfectly match those seen in the training data.
 
@@ -44,9 +47,6 @@ def grade(submission: pd.DataFrame, answers: pd.DataFrame) -> float:
 
     merged = answers.merge(submission, on='id', how='left', suffixes=('_truth', '_pred'))
 
-    if merged['answer_pred'].isna().any():
-        raise ValueError("Submission missing predictions for some test rows.")
-
     correct = 0
     total = len(answers)
 
@@ -56,6 +56,9 @@ def grade(submission: pd.DataFrame, answers: pd.DataFrame) -> float:
     for _, row in merged.iterrows():
         truth = row['answer_truth']
         pred = row['answer_pred']
+
+        if pd.isna(pred):
+            continue
 
         if normalize_answer(truth) == normalize_answer(pred):
             correct += 1
@@ -93,8 +96,8 @@ Submit a CSV file with the following format based on the `sample_submission.csv`
 **Example of a correctly formatted submission file (`sample_submission.csv`):**
 ```csv
 id,answer
-test_0001,-0.30
-test_0002,private equity
-test_0003,-0.30
-test_0004,private equity
+test_8a3b1c2d9f4e,-0.30
+test_4b2c9a1d3f8e,private equity
+test_7f3e1b8c2d9a,-0.30
+test_1d9a8c3b2e4f,private equity
 ```
