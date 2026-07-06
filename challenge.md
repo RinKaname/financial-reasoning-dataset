@@ -6,14 +6,20 @@ This challenge evaluates an AI agent's ability to perform expert-level quantitat
 Participants are tasked with building or fine-tuning a model that can ingest complex financial case studies and quantitative problems, generate the appropriate reasoning steps (Chain-of-Thought), and output the correct final answer. A labeled training dataset of 1,006 examples is provided, featuring both the step-by-step reasoning (enclosed in `<think>` tags) and the final expert answers. The hidden test set contains 100 new, unseen problems across diverse financial domains.
 
 ## Evaluation
-Submissions are scored using **Exact Match (EM)** accuracy. Due to the diverse nature of the answers (some are precise monetary values, others are specific conceptual explanations), the grading script strips punctuation, normalizes whitespace, and checks if the predicted string matches the ground-truth string.
+Submissions are scored using **Exact Match (EM)** accuracy. Due to the diverse nature of the answers (some are precise monetary values, others are specific conceptual explanations), the grading script strips punctuation, normalizes whitespace, and checks if the predicted string matches the ground-truth string. The platform grader strictly checks for exact text matching; participants must ensure number formats (e.g. `10.5` vs `10.50`) perfectly match those seen in the training data.
 
 ```python
+import pandas as pd
 import string
 import re
 
 def normalize_answer(s: str) -> str:
     """Lower text and remove punctuation, articles and extra whitespace."""
+    if pd.isna(s):
+        return ""
+
+    s = str(s)
+
     def remove_articles(text):
         return re.sub(r'\b(a|an|the)\b', ' ', text)
 
@@ -29,17 +35,32 @@ def normalize_answer(s: str) -> str:
 
     return white_space_fix(remove_articles(remove_punc(lower(s))))
 
-def evaluate(y_true: list[str], y_pred: list[str]) -> float:
-    """Calculates Exact Match accuracy."""
-    if len(y_true) != len(y_pred):
-        raise ValueError("Mismatch in number of predictions and ground truths.")
+def grade(submission: pd.DataFrame, answers: pd.DataFrame) -> float:
+    """
+    Score a submission against ground truth answers using Exact Match.
+    """
+    if 'id' not in submission.columns or 'answer' not in submission.columns:
+        raise ValueError("Submission must have 'id' and 'answer' columns.")
+
+    merged = answers.merge(submission, on='id', how='left', suffixes=('_truth', '_pred'))
+
+    if merged['answer_pred'].isna().any():
+        raise ValueError("Submission missing predictions for some test rows.")
 
     correct = 0
-    for yt, yp in zip(y_true, y_pred):
-        if normalize_answer(yt) == normalize_answer(yp):
+    total = len(answers)
+
+    if total == 0:
+        return 0.0
+
+    for _, row in merged.iterrows():
+        truth = row['answer_truth']
+        pred = row['answer_pred']
+
+        if normalize_answer(truth) == normalize_answer(pred):
             correct += 1
 
-    return correct / len(y_true)
+    return float(correct) / float(total)
 ```
 
 ## Dataset
