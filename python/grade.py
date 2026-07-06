@@ -33,9 +33,6 @@ def grade(submission: pd.DataFrame, answers: pd.DataFrame) -> float:
 
     merged = answers.merge(submission, on='id', how='left', suffixes=('_truth', '_pred'))
 
-    if merged['answer_pred'].isna().any():
-        raise ValueError("Submission missing predictions for some test rows.")
-
     correct = 0
     total = len(answers)
 
@@ -45,6 +42,9 @@ def grade(submission: pd.DataFrame, answers: pd.DataFrame) -> float:
     for _, row in merged.iterrows():
         truth = row['answer_truth']
         pred = row['answer_pred']
+
+        if pd.isna(pred):
+            continue
 
         if normalize_answer(truth) == normalize_answer(pred):
             correct += 1
