@@ -1,101 +1,101 @@
 id,answer
-test_0001,your_predicted_answer_here
-test_0002,your_predicted_answer_here
-test_0003,your_predicted_answer_here
-test_0004,your_predicted_answer_here
-test_0005,your_predicted_answer_here
-test_0006,your_predicted_answer_here
-test_0007,your_predicted_answer_here
-test_0008,your_predicted_answer_here
-test_0009,your_predicted_answer_here
-test_0010,your_predicted_answer_here
-test_0011,your_predicted_answer_here
-test_0012,your_predicted_answer_here
-test_0013,your_predicted_answer_here
-test_0014,your_predicted_answer_here
-test_0015,your_predicted_answer_here
-test_0016,your_predicted_answer_here
-test_0017,your_predicted_answer_here
-test_0018,your_predicted_answer_here
-test_0019,your_predicted_answer_here
-test_0020,your_predicted_answer_here
-test_0021,your_predicted_answer_here
-test_0022,your_predicted_answer_here
-test_0023,your_predicted_answer_here
-test_0024,your_predicted_answer_here
-test_0025,your_predicted_answer_here
-test_0026,your_predicted_answer_here
-test_0027,your_predicted_answer_here
-test_0028,your_predicted_answer_here
-test_0029,your_predicted_answer_here
-test_0030,your_predicted_answer_here
-test_0031,your_predicted_answer_here
-test_0032,your_predicted_answer_here
-test_0033,your_predicted_answer_here
-test_0034,your_predicted_answer_here
-test_0035,your_predicted_answer_here
-test_0036,your_predicted_answer_here
-test_0037,your_predicted_answer_here
-test_0038,your_predicted_answer_here
-test_0039,your_predicted_answer_here
-test_0040,your_predicted_answer_here
-test_0041,your_predicted_answer_here
-test_0042,your_predicted_answer_here
-test_0043,your_predicted_answer_here
-test_0044,your_predicted_answer_here
-test_0045,your_predicted_answer_here
-test_0046,your_predicted_answer_here
-test_0047,your_predicted_answer_here
-test_0048,your_predicted_answer_here
-test_0049,your_predicted_answer_here
-test_0050,your_predicted_answer_here
-test_0051,your_predicted_answer_here
-test_0052,your_predicted_answer_here
-test_0053,your_predicted_answer_here
-test_0054,your_predicted_answer_here
-test_0055,your_predicted_answer_here
-test_0056,your_predicted_answer_here
-test_0057,your_predicted_answer_here
-test_0058,your_predicted_answer_here
-test_0059,your_predicted_answer_here
-test_0060,your_predicted_answer_here
-test_0061,your_predicted_answer_here
-test_0062,your_predicted_answer_here
-test_0063,your_predicted_answer_here
-test_0064,your_predicted_answer_here
-test_0065,your_predicted_answer_here
-test_0066,your_predicted_answer_here
-test_0067,your_predicted_answer_here
-test_0068,your_predicted_answer_here
-test_0069,your_predicted_answer_here
-test_0070,your_predicted_answer_here
-test_0071,your_predicted_answer_here
-test_0072,your_predicted_answer_here
-test_0073,your_predicted_answer_here
-test_0074,your_predicted_answer_here
-test_0075,your_predicted_answer_here
-test_0076,your_predicted_answer_here
-test_0077,your_predicted_answer_here
-test_0078,your_predicted_answer_here
-test_0079,your_predicted_answer_here
-test_0080,your_predicted_answer_here
-test_0081,your_predicted_answer_here
-test_0082,your_predicted_answer_here
-test_0083,your_predicted_answer_here
-test_0084,your_predicted_answer_here
-test_0085,your_predicted_answer_here
-test_0086,your_predicted_answer_here
-test_0087,your_predicted_answer_here
-test_0088,your_predicted_answer_here
-test_0089,your_predicted_answer_here
-test_0090,your_predicted_answer_here
-test_0091,your_predicted_answer_here
-test_0092,your_predicted_answer_here
-test_0093,your_predicted_answer_here
-test_0094,your_predicted_answer_here
-test_0095,your_predicted_answer_here
-test_0096,your_predicted_answer_here
-test_0097,your_predicted_answer_here
-test_0098,your_predicted_answer_here
-test_0099,your_predicted_answer_here
-test_0100,your_predicted_answer_here
+test_0001,-0.30
+test_0002,private equity
+test_0003,-0.30
+test_0004,private equity
+test_0005,-0.30
+test_0006,private equity
+test_0007,-0.30
+test_0008,private equity
+test_0009,-0.30
+test_0010,private equity
+test_0011,-0.30
+test_0012,private equity
+test_0013,-0.30
+test_0014,private equity
+test_0015,-0.30
+test_0016,private equity
+test_0017,-0.30
+test_0018,private equity
+test_0019,-0.30
+test_0020,private equity
+test_0021,-0.30
+test_0022,private equity
+test_0023,-0.30
+test_0024,private equity
+test_0025,-0.30
+test_0026,private equity
+test_0027,-0.30
+test_0028,private equity
+test_0029,-0.30
+test_0030,private equity
+test_0031,-0.30
+test_0032,private equity
+test_0033,-0.30
+test_0034,private equity
+test_0035,-0.30
+test_0036,private equity
+test_0037,-0.30
+test_0038,private equity
+test_0039,-0.30
+test_0040,private equity
+test_0041,-0.30
+test_0042,private equity
+test_0043,-0.30
+test_0044,private equity
+test_0045,-0.30
+test_0046,private equity
+test_0047,-0.30
+test_0048,private equity
+test_0049,-0.30
+test_0050,private equity
+test_0051,-0.30
+test_0052,private equity
+test_0053,-0.30
+test_0054,private equity
+test_0055,-0.30
+test_0056,private equity
+test_0057,-0.30
+test_0058,private equity
+test_0059,-0.30
+test_0060,private equity
+test_0061,-0.30
+test_0062,private equity
+test_0063,-0.30
+test_0064,private equity
+test_0065,-0.30
+test_0066,private equity
+test_0067,-0.30
+test_0068,private equity
+test_0069,-0.30
+test_0070,private equity
+test_0071,-0.30
+test_0072,private equity
+test_0073,-0.30
+test_0074,private equity
+test_0075,-0.30
+test_0076,private equity
+test_0077,-0.30
+test_0078,private equity
+test_0079,-0.30
+test_0080,private equity
+test_0081,-0.30
+test_0082,private equity
+test_0083,-0.30
+test_0084,private equity
+test_0085,-0.30
+test_0086,private equity
+test_0087,-0.30
+test_0088,private equity
+test_0089,-0.30
+test_0090,private equity
+test_0091,-0.30
+test_0092,private equity
+test_0093,-0.30
+test_0094,private equity
+test_0095,-0.30
+test_0096,private equity
+test_0097,-0.30
+test_0098,private equity
+test_0099,-0.30
+test_0100,private equity
