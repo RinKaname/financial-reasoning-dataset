@@ -89,3 +89,12 @@ Submit a CSV file with the following format based on the `sample_submission.csv`
 - Must contain exactly 100 rows (one per test sample, plus the header).
 - Must include the header row `id,answer`.
 - Ensure answers match the formatting implied by the training data.
+
+**Example Submission File:**
+```csv
+id,answer
+test_0001,10.5
+test_0002,Venture Capital
+test_0003,3.14
+test_0004,Black-Scholes
+```
